@@ -10,8 +10,17 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.OpenBook"
+        android:theme="@style/Theme.Perpusku"
         tools:targetApi="31">
+        <activity
+            android:name=".profile"
+            android:exported="false" />
+        <activity
+            android:name=".item_book"
+            android:exported="false" />
+        <activity
+            android:name=".mainMenuActivity"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

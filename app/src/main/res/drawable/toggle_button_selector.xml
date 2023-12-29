@@ -1,0 +1,5 @@
+<!-- toggle_button_selector.xml -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_checked="true" android:drawable="@drawable/checked_background" />
+    <item android:drawable="@drawable/unchecked_background" />
+</selector>
