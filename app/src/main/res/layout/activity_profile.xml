@@ -35,9 +35,9 @@
             android:id="@+id/btnChangeProfilePic"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Change Profile Picture"
+            android:text="Ubah Profil"
             android:textAlignment="textStart"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="50dp"
             android:background="white"
             android:textColor="@color/black"
            />
@@ -48,10 +48,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="textStart"
-            android:text="Change Password"
+            android:text="Ubah Password"
             android:background="white"
             android:textColor="@color/black"
            />
+        <Button
+            android:id="@+id/btnHistory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="textStart"
+            android:text="Lihat Histori Peminjaman"
+            android:background="white"
+            android:textColor="@color/black"
+            />
 
         <!-- Logout Button -->
         <Button

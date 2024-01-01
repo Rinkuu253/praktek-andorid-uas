@@ -15,11 +15,21 @@
         android:textSize="20dp" />
 
     <!-- ToggleButton for slide -->
+    <TextView
+        android:id="@+id/namaUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titleTextView"
+        android:layout_marginTop="5dp"
+        android:text="Nama User"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
     <ToggleButton
         android:id="@+id/toggleButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="45dp"
+        android:layout_marginStart="43dp"
         android:layout_toEndOf="@+id/titleTextView"
         android:background="@drawable/toggle_button_selector"
         android:checked="false"

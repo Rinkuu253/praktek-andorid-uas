@@ -1,9 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeMenu">
+    tools:context=".HomeMenu"
+    android:padding="25dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:id="@+id/layoutWelcome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+       >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Selamat Datang"
+            android:textSize="20sp"/>
+        <TextView
+            android:id="@+id/namaUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Admin"
+            android:textSize="20sp"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnToMember"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Member"
+        android:layout_below="@+id/layoutWelcome"
+        android:layout_marginTop="52dp" />
+    <Button
+        android:id="@+id/btnToHistory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Histori Peminjaman"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/layoutWelcome"
+        android:layout_toEndOf="@id/btnToMember"
+        android:layout_marginTop="52dp" />
+    <Button
+        android:id="@+id/btnToBook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Buku"
+        android:layout_below="@+id/btnToMember"
+        android:layout_marginTop="20dp" />
+    <TextView
+        android:id="@+id/borrowTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:text="Peminjaman 5 Terakhir"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/btnToBook"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/borrowTitle"
+        android:layout_marginTop="20dp">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewBooks"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+        </androidx.recyclerview.widget.RecyclerView>
+    </LinearLayout>
+</RelativeLayout>
