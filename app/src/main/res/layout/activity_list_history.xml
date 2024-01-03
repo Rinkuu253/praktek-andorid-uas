@@ -30,7 +30,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Pengguna"
+                    android:text="Histori Peminjaman"
                     android:gravity="center"
                     android:textSize="24sp"
                     android:textColor="@color/black"/>
@@ -38,7 +38,7 @@
             </com.google.android.material.appbar.AppBarLayout>
 
             <ListView
-                android:id="@+id/listUser"
+                android:id="@+id/listHistory"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 

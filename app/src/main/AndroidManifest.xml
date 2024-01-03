@@ -13,6 +13,18 @@
         android:theme="@style/Theme.Perpusku"
         tools:targetApi="31">
         <activity
+            android:name=".view_history"
+            android:exported="false" />
+        <activity
+            android:name=".create_history"
+            android:exported="false" />
+        <activity
+            android:name=".edit_history"
+            android:exported="false" />
+        <activity
+            android:name=".list_history"
+            android:exported="false" />
+        <activity
             android:name=".edit_user"
             android:exported="false" />
         <activity
