@@ -1,9 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view_history">
+    android:padding="20dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/profile_picture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Lihat Peminjaman"
+        android:textSize="24sp"
+        android:contentDescription="PhotoProfile"
+        android:scaleType="centerCrop"
+        android:src="@drawable/default_book_image" />
+    <TextView
+        android:id="@+id/namaBuku"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@id/profile_picture"
+        android:layout_marginTop="48dp"
+        android:layout_marginStart="16dp"
+        android:textSize="20sp"
+        android:text="Nama Buku"
+        android:layout_marginEnd="16dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+    <EditText
+        android:id="@+id/bookName"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@id/namaBuku"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:inputType="none"
+     />
+
+    <TextView
+        android:id="@+id/namaPeminjam"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@id/bookName"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp"
+        android:textSize="20sp"
+        android:text="Nama Peminjam"
+        android:layout_marginEnd="16dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+    <EditText
+        android:id="@+id/borrowersName"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@id/namaPeminjam"
+
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:inputType="none"
+       />
+
+    <TextView
+        android:id="@+id/textPinjam"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@id/borrowersName"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp"
+        android:textSize="20sp"
+        android:text="Lama Pinjaman"
+        android:layout_marginEnd="16dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+    <EditText
+        android:id="@+id/limitPinjam"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@id/textPinjam"
+
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:inputType="none"
+       />
+    <Button
+        android:id="@+id/btnEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/limitPinjam"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="19dp"
+        android:background="@color/blue"
+        android:text="Edit" />
+
+</RelativeLayout>

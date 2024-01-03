@@ -5,64 +5,97 @@
     android:layout_height="match_parent"
     android:padding="20dp">
 
-    <ImageView
+    <TextView
         android:id="@+id/profile_picture"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
+        android:text="Tambah Peminjaman"
+        android:textSize="24sp"
         android:contentDescription="PhotoProfile"
         android:scaleType="centerCrop"
         android:src="@drawable/default_book_image" />
-
-    <EditText
-        android:id="@+id/edit_text_name"
+    <TextView
+        android:id="@+id/namaBuku"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_below="@id/profile_picture"
         android:layout_marginTop="48dp"
         android:layout_marginStart="16dp"
+        android:textSize="20sp"
+        android:text="Nama Buku"
+        android:layout_marginEnd="16dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+    <EditText
+        android:id="@+id/bookName"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@id/namaBuku"
+
+        android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:inputType="text"
-        android:hint="Masukan Username" />
+        android:hint="Masukan Nama Buku" />
 
-    <!-- Email EditText -->
-    <EditText
-        android:id="@+id/edit_text_email"
+    <TextView
+        android:id="@+id/namaPeminjam"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_below="@id/edit_text_name"
-        android:layout_marginTop="16dp"
+        android:layout_below="@id/bookName"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp"
+        android:textSize="20sp"
+        android:text="Nama Peminjam"
+        android:layout_marginEnd="16dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+    <EditText
+        android:id="@+id/borrowersName"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@id/namaPeminjam"
+
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:inputType="textEmailAddress"
-        android:hint="Masukan Email" />
+        android:inputType="text"
+        android:hint="Masukan Nama Peminjam" />
 
-    <!-- Password EditText -->
-    <EditText
-        android:id="@+id/edit_text_password"
+    <TextView
+        android:id="@+id/textPinjam"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_below="@id/edit_text_email"
-        android:layout_marginTop="16dp"
+        android:layout_below="@id/borrowersName"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp"
+        android:textSize="20sp"
+        android:text="Lama Pinjaman"
+        android:layout_marginEnd="16dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+    <EditText
+        android:id="@+id/lamaPinjam"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@id/textPinjam"
+
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:inputType="textPassword"
-        android:hint="Masukan Password" />
-
-    <!-- Button for View History -->
+        android:inputType="text"
+        android:hint="Masukan Lama Pinjam" />
     <Button
         android:id="@+id/btnSave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/edit_text_password"
+        android:layout_below="@+id/lamaPinjam"
         android:layout_alignParentStart="true"
         android:layout_marginStart="16dp"
         android:layout_marginTop="19dp"
