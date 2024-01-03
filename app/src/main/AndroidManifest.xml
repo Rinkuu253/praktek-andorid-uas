@@ -28,10 +28,10 @@
             android:name=".edit_user"
             android:exported="false" />
         <activity
-            android:name=".tambah_user"
+            android:name=".create_user"
             android:exported="false" />
         <activity
-            android:name=".rincian_user"
+            android:name=".view_user"
             android:exported="false" />
         <activity
             android:name=".list_user"
@@ -43,7 +43,7 @@
             android:name=".profile"
             android:exported="false" />
         <activity
-            android:name=".item_book"
+            android:name=".list_book"
             android:exported="false" />
         <activity
             android:name=".mainMenuActivity"

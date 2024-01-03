@@ -5,20 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -28,10 +22,8 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
-public class item_book extends AppCompatActivity {
+public class list_book extends AppCompatActivity {
     ListView itembuku;
     FloatingActionButton createBukuBtn;
 
@@ -39,13 +31,13 @@ public class item_book extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        showDataJsonMember();
+        showDataJsonBuku();
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_item_book);
+        setContentView(R.layout.activity_list_book);
 
         itembuku = findViewById(R.id.itembuku_list);
         createBukuBtn = findViewById(R.id.add_buku_btn);
@@ -57,7 +49,7 @@ public class item_book extends AppCompatActivity {
 
 //                Toast.makeText(this, i, Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent(getApplicationContext(), ViewBukuDetailActivity.class);
+                Intent intent = new Intent(getApplicationContext(), view_book.class);
                 intent.putExtra("no_buku", noBuku);
                 startActivity(intent);
             }
@@ -68,14 +60,14 @@ public class item_book extends AppCompatActivity {
         });
 
         createBukuBtn.setOnClickListener(view -> {
-            Intent intent = new Intent(getApplicationContext(), CreateBukuActivity.class);
+            Intent intent = new Intent(getApplicationContext(), create_book.class);
             startActivity(intent);
         });
     }
 
-    public void showDataJsonMember()
+    public void showDataJsonBuku()
     {
-        String url = "http://" + item_book.this.getResources().getString(R.string.default_ip) + "/library_database/read_buku.php";
+        String url = "http://" + list_book.this.getResources().getString(R.string.default_ip) + "/library_database/read_buku.php";
         final RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
         JsonArrayRequest req = new JsonArrayRequest(url,
                 new Response.Listener<JSONArray>() {
@@ -95,9 +87,9 @@ public class item_book extends AppCompatActivity {
                             SimpleAdapter simpleAdapter = new SimpleAdapter(
                                     getApplicationContext(),
                                     feedList,
-                                    R.layout.detail_buku_list,
+                                    R.layout.detail_list_buku,
                                     new String[]{"no_buku", "judul_buku"},
-                                    new int[]{R.id.txt_detail_buku_no_buku, R.id.txt_detail_buku_judul_buku}
+                                    new int[]{R.id.txt_detail_no_buku, R.id.txt_detail_judul_buku}
                             );
 
                             itembuku.setAdapter(simpleAdapter);

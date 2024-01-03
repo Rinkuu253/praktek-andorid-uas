@@ -35,7 +35,7 @@ public class view_book extends AppCompatActivity {
     private DatePicker viewBukuTanggalTerbitPicker;
     private ImageView viewBukuStatus;
     private TextView viewBukuNoBuku, viewBukuStatusTxt, viewBukuPeminjam;
-    private Button viewBukuCreateBtn, viewBukuDeleteBtn;
+    private Button viewBukuEditBtn, viewBukuDeleteBtn;
 
 
     @Override
@@ -51,7 +51,7 @@ public class view_book extends AppCompatActivity {
         viewBukuStatus = findViewById(R.id.view_buku_status);
         viewBukuStatusTxt = findViewById(R.id.view_buku_status_txt);
         viewBukuPeminjam = findViewById(R.id.view_buku_peminjam);
-        viewBukuCreateBtn = findViewById(R.id.view_buku_edit_btn);
+        viewBukuEditBtn = findViewById(R.id.view_buku_edit_btn);
         viewBukuDeleteBtn = findViewById(R.id.view_buku_delete_btn);
 
         Intent intent = getIntent();
@@ -60,7 +60,7 @@ public class view_book extends AppCompatActivity {
             showDataJsonBukuById(receivedNoBuku);
         }
 
-        viewBukuCreateBtn.setOnClickListener(view -> {
+        viewBukuEditBtn.setOnClickListener(view -> {
             String noBuku = viewBukuNoBuku.getText().toString();
             String judulBuku = viewBukuJudulBukuEdit.getText().toString();
             String penulis = viewBukuPenulisEdit.getText().toString();
@@ -228,8 +228,8 @@ public class view_book extends AppCompatActivity {
 
     public void deleteRecordMember (String noBuku)
     {
-        String url = "http://" + ViewBukuDetailActivity.this.getResources().getString(R.string.default_ip) + "/library_database/delete_buku.php";
-        RequestQueue queue = Volley.newRequestQueue(ViewBukuDetailActivity.this);
+        String url = "http://" + view_book.this.getResources().getString(R.string.default_ip) + "/library_database/delete_buku.php";
+        RequestQueue queue = Volley.newRequestQueue(view_book.this);
         StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -237,7 +237,7 @@ public class view_book extends AppCompatActivity {
                 try {
                     JSONObject jsonObject = new JSONObject(response);
                     // on below line we are displaying a success toast message.
-                    Toast.makeText(ViewBukuDetailActivity.this, jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(view_book.this, jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
