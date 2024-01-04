@@ -39,8 +39,8 @@ public class list_book extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_book);
 
-        itembuku = findViewById(R.id.itembuku_list);
-        createBukuBtn = findViewById(R.id.add_buku_btn);
+        itembuku = findViewById(R.id.listBuku);
+        createBukuBtn = findViewById(R.id.btnAdd_Buku);
 //      showDataJsonMember();
         itembuku.setOnItemClickListener((adapterView, view, i, l) -> {
             try {

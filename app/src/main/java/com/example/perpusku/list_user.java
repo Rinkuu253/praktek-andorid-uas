@@ -39,8 +39,8 @@ public class list_user extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_user);
-        menuListUser = findViewById(R.id.menu_list_user);
-        createUserBtn = findViewById(R.id.menu_create_user_btn);
+        menuListUser = findViewById(R.id.listUser);
+        createUserBtn = findViewById(R.id.btnAdd_User);
 
 //        showDataJsonMember();
 
