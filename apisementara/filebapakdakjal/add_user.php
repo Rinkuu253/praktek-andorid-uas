@@ -1,7 +1,7 @@
 <?php
     header('content-type:application/json');
     
-    if (isset($_POST['name_user']) &&isset($_POST['email_user']) && isset($_POST['password_user'])){
+    if (isset($_POST['nama_user']) &&isset($_POST['email_user']) && isset($_POST['pw_user'])){
         include "myconnection.php";
         $sSQL="";
         $sSQL = " select * from tb_user 
@@ -17,9 +17,8 @@
             $data['message']='Failed insert record, duplicate email account';
         }else{
             $sSQL="";
-            $sSQL= " INSERT INTO tb_user (name_user, email_user, status_user, tanggal_peminjaman ,password_user) 
-            VALUES ('$_POST[name_user]','$_POST[email_user]','$_POST[status_user]','$_POST[tanggal_peminjaman]',
-            MD5('$_POST[password_user]'))";
+            $sSQL= " INSERT INTO tb_user (`id_user`, `email_user`, `nama_user`, `pw_user`, `foto_profil`) 
+            VALUES (NULL, '$_POST[email_user]', '$_POST[nama_user]', '$_POST[pw_user]', '$_POST[foto_profil]')";
 
 
             //die ($sSQL);                  
@@ -37,4 +36,5 @@
         mysqli_close($conn);
     }
 ?>
+
 

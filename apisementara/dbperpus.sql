@@ -32,9 +32,7 @@ CREATE TABLE `tb_buku` (
   `judul_buku` varchar(100) NOT NULL,
   `gambar_buku` varchar(100) NOT NULL,
   `penulis_buku` varchar(100) NOT NULL,
-  `deskripsi_buku` varchar(100) NOT NULL,
-  `kategori_buku` varchar(100) NOT NULL,
-  `status_buku` varchar(100) NOT NULL
+  `deskripsi_buku` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
