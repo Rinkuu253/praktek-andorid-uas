@@ -9,7 +9,7 @@ $foto_profil = isset($_GET['foto_profil']) ? $_GET['foto_profil'] : '';
 $sql = "INSERT INTO tb_user (`id_user`, `email_user`, `nama_user`, `pw_user`, `foto_profil`) 
          VALUES (NULL, '$email_user', '$nama_user', '$pw_user', '$foto_profil')";
 
-$query = mysqli_query($conn, $sql);
+$query = mysqli_query($db, $sql);
 
 if ($query) {
     echo json_encode(array(

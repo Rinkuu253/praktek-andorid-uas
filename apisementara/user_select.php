@@ -11,7 +11,7 @@ if (!empty($id_user)) {
     $sSQL .= " WHERE id_user = '$id_user'";
 }
 
-$result = mysqli_query($conn, $sSQL);
+$result = mysqli_query($db, $sSQL);
 
 if ($result) {
     $data = array();

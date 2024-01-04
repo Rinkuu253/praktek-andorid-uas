@@ -20,7 +20,7 @@ $sSQL = "UPDATE tb_user
          foto_profil = '$foto_profil'
          WHERE id_user = '$id_user'";
 
-$query = mysqli_query($conn, $sSQL);
+$query = mysqli_query($db, $sSQL);
 
 if ($query) {
     echo json_encode(array(

@@ -6,10 +6,10 @@
    $database = "dbperpus";
 
    
-   $conn = mysqli_connect($server, $user, $password, $database);
+   $db = mysqli_connect($server, $user, $password, $database);
    
         // Check connection
-    if (!$conn) {
+    if (!$db) {
                 die("Connection failed: " . mysqli_connect_error());
     }
 ?>
