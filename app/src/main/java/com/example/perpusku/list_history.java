@@ -31,7 +31,7 @@ import java.util.List;
 import java.util.Map;
 
 public class list_history extends AppCompatActivity {
-    ListView menuListHistory
+    ListView menuListHistory;
     private Button btnAdd;
 
     @Override
