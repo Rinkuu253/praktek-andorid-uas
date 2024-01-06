@@ -22,7 +22,7 @@ import java.util.Map;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class create_book extends AppCompatActivity {
-    EditText judulBukuEdit, penulisEdit, penerbitEdit;
+    EditText judulBukuEdit, penulisEdit, deskripsiEdit;
     DatePicker tanggalTerbitPicker;
     Button createBtn;
 
@@ -30,17 +30,17 @@ public class create_book extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_book);
-        createBtn = findViewById(R.id.create_buku_create_btn);
+        createBtn = findViewById(R.id.create_buku_btn);
         judulBukuEdit = findViewById(R.id.view_buku_judul_buku_edit);
         penulisEdit = findViewById(R.id.create_buku_penulis_edit);
-        penerbitEdit = findViewById(R.id.create_buku_penerbit_edit);
+        deskripsiEdit = findViewById(R.id.create_buku_deskripsi_edit);
         tanggalTerbitPicker = findViewById(R.id.create_buku_tanggal_terbit_picker);
 
         createBtn.setOnClickListener(view -> {
             try {
                 String judulBuku = judulBukuEdit.getText().toString();
                 String penulis = penulisEdit.getText().toString();
-                String penerbit = penerbitEdit.getText().toString();
+                String penerbit = deskripsiEdit.getText().toString();
 
                 int day = tanggalTerbitPicker.getDayOfMonth();
                 int month = tanggalTerbitPicker.getMonth() + 1;
@@ -60,7 +60,7 @@ public class create_book extends AppCompatActivity {
         });
     }
 
-    public void insertRecordMember (String judulBuku, String penulis, String penerbit, String tanggalTerbit)
+    public void insertRecordMember (String judul_buku, String penulis_buku, String deskripsi_buku, String tanggalTerbit)
     {
         String url = "http://" + create_book.this.getResources().getString(R.string.default_ip) + "/library_database/create_buku.php";
         RequestQueue queue = Volley.newRequestQueue(create_book.this);
@@ -78,7 +78,7 @@ public class create_book extends AppCompatActivity {
                 // and setting data to edit text as empty
                 judulBukuEdit.setText("");
                 penulisEdit.setText("");
-                penerbitEdit.setText("");
+                deskripsiEdit.setText("");
             }
         }, new com.android.volley.Response.ErrorListener() {
             @Override
@@ -91,9 +91,9 @@ public class create_book extends AppCompatActivity {
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<String, String>();
 
-                params.put("judul_buku", judulBuku);
-                params.put("penulis", penulis);
-                params.put("penerbit", penerbit);
+                params.put("judul_buku", judul_buku);
+                params.put("penulis", penulis_buku);
+                params.put("deskripsi", deskripsi_buku);
                 params.put("tanggal_terbit", tanggalTerbit);
 
                 return params;

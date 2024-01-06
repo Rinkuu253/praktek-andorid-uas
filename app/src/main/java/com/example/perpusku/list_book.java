@@ -45,12 +45,12 @@ public class list_book extends AppCompatActivity {
         itembuku.setOnItemClickListener((adapterView, view, i, l) -> {
             try {
                 HashMap<String, String> clickedItem = (HashMap<String, String>) adapterView.getItemAtPosition(i);
-                String noBuku = clickedItem.get("no_buku");
+                String id_buku = clickedItem.get("id_buku");
 
 //                Toast.makeText(this, i, Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(getApplicationContext(), view_book.class);
-                intent.putExtra("no_buku", noBuku);
+                intent.putExtra("id_buku", id_buku);
                 startActivity(intent);
             }
             catch (Exception e) {
@@ -79,8 +79,9 @@ public class list_book extends AppCompatActivity {
                             for (int i = 0; i < response.length(); i++) {
                                 JSONObject data = (JSONObject) response.get(i);
                                 map = new HashMap<String, String>();
-                                map.put("no_buku", data.getString("no_buku"));
+                                map.put("id_buku", data.getString("id_buku"));
                                 map.put("judul_buku", data.getString("judul_buku"));
+                                map.put("deskripsi_buku", data.getString("deskripsi_buku"));
                                 feedList.add(map);
                             }
 
@@ -88,8 +89,8 @@ public class list_book extends AppCompatActivity {
                                     getApplicationContext(),
                                     feedList,
                                     R.layout.detail_list_buku,
-                                    new String[]{"no_buku", "judul_buku"},
-                                    new int[]{R.id.txt_detail_no_buku, R.id.txt_detail_judul_buku}
+                                    new String[]{"no_buku", "judul_buku", "deskripsi_buku"},
+                                    new int[]{R.id.txt_detail_id_buku, R.id.txt_detail_judul_buku, R.id.txt_detail_deskripsi_buku}
                             );
 
                             itembuku.setAdapter(simpleAdapter);
