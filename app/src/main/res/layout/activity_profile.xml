@@ -20,7 +20,8 @@
         android:orientation="vertical"
 
         android:layout_marginTop="200dp"
-        android:background="@color/white">
+        android:background="@color/white"
+        android:padding="12dp">
 
         <!-- Change Profile Picture Button -->
         <TextView
@@ -29,38 +30,34 @@
             android:layout_height="wrap_content"
             android:text="UserName BOi"
             android:textAlignment="center"
-            android:textSize="20sp"
+            android:textSize="24sp"
             android:layout_marginTop="75dp"/>
+
         <Button
+
             android:id="@+id/btnChangeProfilePic"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
             android:text="Ubah Profil"
             android:textAlignment="textStart"
-            android:layout_marginTop="50dp"
-            android:background="@color/white"
-            android:textColor="@color/black"
-           />
+
+            />
 
         <!-- Change Password Button -->
         <Button
             android:id="@+id/btnChangePassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="textStart"
             android:text="Ubah Password"
-            android:background="@color/white"
-            android:textColor="@color/black"
-           />
+            android:textAlignment="textStart" />
+
         <Button
             android:id="@+id/btnHistory"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="textStart"
             android:text="Lihat Histori Peminjaman"
-            android:background="@color/white"
-            android:textColor="@color/black"
-            />
+            android:textAlignment="textStart" />
 
         <!-- Logout Button -->
         <Button
